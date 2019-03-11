@@ -8,14 +8,6 @@
           </router-link>
         </div>
     </div>
-    <div class="tab">
-        <div class="tab-item" v-for="(tab,index) in navlist2" :key='index'>
-          <router-link :to="tab.url">
-            <i :class="tab.class"></i>
-            <span>{{tab.name}}</span>
-          </router-link>
-        </div>
-    </div>
   </div>
 </template>
 
@@ -41,42 +33,7 @@ export default {
        name:'家教',
        class:'el-icon-star-on',
        url:'/mine'
-      },
-      {
-        name:'送水',
-        class:'el-icon-warning',
-        url:'/waterhome'
-      },
-      {
-       name:'维修',
-       class:'el-icon-question',
-       url:'/ticket'
       }],
-      navlist2:[{
-        name:'送水',
-        class:'el-icon-info',
-        url:'/waterhome'
-      },
-      {
-       name:'维修',
-       class:'el-icon-setting',
-       url:'/ticket'
-      },
-      {
-       name:'家教',
-       class:'el-icon-star-on',
-       url:'/mine'
-      },
-      {
-        name:'送水',
-        class:'el-icon-warning',
-        url:'/waterhome'
-      },
-      {
-       name:'维修',
-       class:'el-icon-question',
-       url:'/ticket'
-      }]
     }
   },
   methods: {

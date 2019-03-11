@@ -8,16 +8,26 @@ export default new vuex.Store({
         scdp:12,
         ye:123,
         jf:1230,
-        savefoods:[],
-        vuextotal:"",
+        // savefoods:sessionStorage.getItem('savefoods'),
+        // vuextotal:sessionStorage.getItem('vuextotal'),
+        // goodsobject:[]
     },
     mutations:{
         vuexfoods(state,newfoods){
-            state.savefoods = newfoods;
+            sessionStorage.getItem("vuexfoods",newfoods)
+            state.vuexfoods = newfoods;
         },
         vuextotal(state,newtotal){
+            sessionStorage.getItem("vuextotal",newtotal)
             state.vuextotal = newtotal;
+        },
+        goodsobject(state,newgoods){
+            sessionStorage.getItem("goodsobject",newgoods)
+            state.goodsobject = newgoods;
         }
     },
+    getters:{
+
+    }
     
 })

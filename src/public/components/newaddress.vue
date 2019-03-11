@@ -59,6 +59,7 @@ export default {
     },
     saveaddress(){
         console.log("保存")
+        this.$router.push('/shop/goods')
     },
     addressback(){
       this.addressdiv = true

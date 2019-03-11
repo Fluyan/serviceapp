@@ -14,6 +14,13 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
+if (sessionStorage.getItem("vuextotal")) {
+  store.commit("vuextotal",sessionStorage.getItem("vuextotal"));
+}
+if (sessionStorage.getItem("vuexfoods")) {
+  store.commit("vuexfoods", sessionStorage.getItem("vuexfoods"));
+}
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

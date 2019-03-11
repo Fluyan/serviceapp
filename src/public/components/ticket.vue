@@ -26,7 +26,7 @@
                     <div class="shopname">1213123<span>本单由商家配送</span></div>
                     <div class="order-content">
                         <ul>
-                            <li class="food" v-for="(food,index) in savefoods" :key="index">
+                            <li class="food" v-for="(food,index) in vuexfoods" :key="index">
                                 <p>
                                     {{food.name}}
                                     <span class="ordercount">×{{food.count}}</span>
@@ -95,7 +95,7 @@ export default {
   },
   computed:{
     ...mapState([
-      'savefoods','vuextotal'
+      'vuexfoods','vuextotal'
     ]),
   },
 }

@@ -208,8 +208,10 @@ export default {
                 click: true
                 })
             })
-            console.log()
-            console.log(this.selectFoods)
+            // console.log()
+            // console.log(this.selectFoods)
+            sessionStorage.setItem('vuextotal',this.totalPrice)
+            sessionStorage.setItem('vuexfoods',this.selectFoods)
             this.$store.commit('vuextotal', this.totalPrice)
             this.$store.commit('vuexfoods', this.selectFoods)
         },

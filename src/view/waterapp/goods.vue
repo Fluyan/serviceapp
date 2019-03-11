@@ -108,7 +108,9 @@ export default {
       self.$nextTick(() => {
         self._initScroll();
         self._calculateHeight()
-      });    
+      });
+      sessionStorage.setItem('goodsobject',self.goods)
+      self.$store.commit("goodsobject",self.goods)   
     }, response => {
       console.log('error,no data');
     });

@@ -2,6 +2,9 @@
   <div id="app">
     <router-view></router-view>
     <bottom-nav v-if="routershop"></bottom-nav>
+    <ul>
+      <li v-for="(item,index) in list" :key="index">{{item}}</li>
+    </ul>
   </div>
 </template>
 
@@ -14,14 +17,22 @@ export default {
   },
   data(){
     return {
-      routershop:true
+      routershop:true,
+      list:[]
     }
   },
   mounted() {
-    
+    for(var i=0;i<10;i++){
+        this.list.push(i)
+        
+      }
+      console.log(this.list)
   },
   watch:{
     
+  },
+  computed:{
+      
   }
 }
 </script>

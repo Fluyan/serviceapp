@@ -13,9 +13,14 @@ export default new vuex.Store({
         // goodsobject:[]
     },
     mutations:{
+        vuexshopname(state,newshopname){
+            sessionStorage.getItem("vuexshopname",newshopname)
+            state.vuexshopname = newshopname;
+        },
         vuexfoods(state,newfoods){
-            sessionStorage.getItem("vuexfoods",newfoods)
-            state.vuexfoods = newfoods;
+            sessionStorage.getItem("vuexfoods",JSON.parse(newfoods))
+            state.vuexfoods = JSON.parse(newfoods);
+            console.log(JSON.parse(newfoods))
         },
         vuextotal(state,newtotal){
             sessionStorage.getItem("vuextotal",newtotal)

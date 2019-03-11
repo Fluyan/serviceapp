@@ -2,9 +2,7 @@
   <div id="app">
     <router-view></router-view>
     <bottom-nav v-if="routershop"></bottom-nav>
-    <ul>
-      <li v-for="(item,index) in list" :key="index">{{item}}</li>
-    </ul>
+    
   </div>
 </template>
 
@@ -18,21 +16,20 @@ export default {
   data(){
     return {
       routershop:true,
-      list:[]
     }
   },
   mounted() {
-    for(var i=0;i<10;i++){
-        this.list.push(i)
-        
-      }
-      console.log(this.list)
+    if(sessionStorage.getItem('vuexseller')=== null){
+        sessionStorage.setItem('vuexseller','')
+    }
+    this.$store.state.vuexseller = JSON.parse(sessionStorage.getItem('vuexseller'))
+    console.log(this.$store.state.vuexseller)
   },
   watch:{
     
   },
   computed:{
-      
+
   }
 }
 </script>

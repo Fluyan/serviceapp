@@ -109,8 +109,9 @@ export default {
         self._initScroll();
         self._calculateHeight()
       });
-      sessionStorage.setItem('goodsobject',self.goods)
-      self.$store.commit("goodsobject",self.goods)   
+      // sessionStorage.setItem('goodsobject',JSON.stringify(self.goods))
+      // self.$store.commit("goodsobject",JSON.stringify(self.goods))
+      
     }, response => {
       console.log('error,no data');
     });

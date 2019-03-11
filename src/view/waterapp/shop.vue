@@ -44,7 +44,9 @@ export default {
     //this.$axios.get('/api/seller')
     this.$axios.get('./static/data.json').then(function (response) {
         self.seller = response.data.seller;
-        console.log(response.data)
+        console.log(response.data.seller)
+        sessionStorage.setItem('vuexshopname',self.seller.shopName)//店家名
+        self.$store.commit('vuexshopname', self.seller.shopName)//店家名   
     }, response => {
       console.log('error,no data');
     });

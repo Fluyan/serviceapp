@@ -210,10 +210,15 @@ export default {
             })
             // console.log()
             // console.log(this.selectFoods)
-            sessionStorage.setItem('vuextotal',this.totalPrice)
-            sessionStorage.setItem('vuexfoods',this.selectFoods)
-            this.$store.commit('vuextotal', this.totalPrice)
-            this.$store.commit('vuexfoods', this.selectFoods)
+            
+            sessionStorage.setItem('vuextotal',this.totalPrice)//总价
+            this.$store.commit('vuextotal', this.totalPrice)//总价
+
+            sessionStorage.setItem('vuexshopname',this.shopName)//店名
+            this.$store.commit('vuexshopname', this.shopName)//店名
+            
+            sessionStorage.setItem('vuexfoods',JSON.stringify(this.selectFoods))//选中的商品
+            this.$store.commit('vuexfoods', JSON.stringify(this.selectFoods))//选中的商品
         },
         back(){
             this.isordershow = false
